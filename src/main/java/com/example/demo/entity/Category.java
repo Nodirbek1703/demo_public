@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data
@@ -18,4 +19,6 @@ public class Category {
 
     @Column(name = "name",length =250)
     private String name;
+
+
 }
