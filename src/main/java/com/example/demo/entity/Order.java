@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -22,11 +23,13 @@ public class Order {
     @Column(name = "order_date", nullable = false)
     private Date orderDate;
 
+
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cust_id", nullable = false)
+    @JoinColumn(name = "cust_id",insertable = false, updatable = false)
     private Customer customer;
 
-    @Column(name = "cust_id", insertable = false, updatable = false)
+    @Column(name = "cust_id")
     private Integer customerId;
 
 }

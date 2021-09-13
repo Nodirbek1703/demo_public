@@ -8,4 +8,6 @@ public interface ProductService {
     List<Product> highDemandProducts();
     List<Product> bulkProducts();
     Product getProduct(Integer id);
+    List<Product> getProducts();
+    Product getByOrderId(Integer orderId);
 }

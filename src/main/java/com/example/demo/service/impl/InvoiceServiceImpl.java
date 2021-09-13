@@ -13,6 +13,7 @@ public class InvoiceServiceImpl implements InvoiceService {
     final
     InvoiceRepository invoiceRepository;
 
+    @Autowired
     public InvoiceServiceImpl(InvoiceRepository invoiceRepository) {
         this.invoiceRepository = invoiceRepository;
     }
@@ -20,7 +21,7 @@ public class InvoiceServiceImpl implements InvoiceService {
 
     @Override
     public List<Invoice> expiredInvoices() {
-        return invoiceRepository.findAllByIssuedDateAfterDueDate();
+        return  null;
     }
 
     @Override
@@ -31,5 +32,10 @@ public class InvoiceServiceImpl implements InvoiceService {
     @Override
     public List<Invoice> overPaidInvoices() {
         return null;
+    }
+
+    @Override
+    public Invoice getInvoice(Integer id) {
+        return invoiceRepository.getById(id);
     }
 }

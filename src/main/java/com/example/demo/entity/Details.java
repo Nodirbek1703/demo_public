@@ -16,6 +16,13 @@ public class Details {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = sequenceName)
     private Integer id;
 
+    @OneToOne
+    @JoinColumn(name = "ord_id",updatable = false,insertable=false)
+    private Order order;
+
+    @OneToOne
+    @JoinColumn(name = "product_id",updatable = false,insertable=false)
+    private Product product;
 
     @Column(name = "ord_id")
     private Integer orderId;

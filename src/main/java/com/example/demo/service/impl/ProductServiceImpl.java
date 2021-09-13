@@ -3,7 +3,6 @@ package com.example.demo.service.impl;
 import com.example.demo.entity.Product;
 import com.example.demo.repository.ProductRepository;
 import com.example.demo.service.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,6 +29,16 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getProduct(Integer id) {
-        return productRepository.getOne(id);
+        return productRepository.getById(id);
+    }
+
+    @Override
+    public List<Product> getProducts() {
+        return productRepository.findAll();
+    }
+
+    @Override
+    public Product getByOrderId(Integer orderId) {
+        return productRepository.getProductByOrderId(orderId);
     }
 }

@@ -12,4 +12,9 @@ public class CustomerServiceImpl implements CustomerService {
     public List<Customer> customersWithOutOrders() {
         return null;
     }
+
+    @Override
+    public List<Customer> customersLastOrders() {
+        return null;
+    }
 }

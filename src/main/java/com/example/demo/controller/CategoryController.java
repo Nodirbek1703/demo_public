@@ -13,7 +13,7 @@ public class CategoryController {
 
     final
     CategoryService categoryService;
-
+    @Autowired
     public CategoryController(CategoryService categoryService) {
         this.categoryService = categoryService;
     }
