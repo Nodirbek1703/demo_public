@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.ProductDTO;
 import com.example.demo.entity.Product;
 import com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,12 @@ public class ProductController {
             @RequestParam("product_id") Integer productId
     ) {
         return productService.getProduct(productId);
+    }
+
+
+    @GetMapping("/high-demand-products")
+    public List<ProductDTO> getHighDemandProductById() {
+        return productService.highDemandProducts();
     }
 
 }

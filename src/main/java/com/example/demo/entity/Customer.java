@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -28,4 +29,7 @@ public class Customer {
 
     @Column(name = "phone",length =50)
     private String phone;
+
+    @OneToMany(mappedBy="customer")
+    private List<Order> orders;
 }

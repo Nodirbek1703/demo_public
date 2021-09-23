@@ -16,11 +16,11 @@ public class Details {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = sequenceName)
     private Integer id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "ord_id",updatable = false,insertable=false)
     private Order order;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "product_id",updatable = false,insertable=false)
     private Product product;
 

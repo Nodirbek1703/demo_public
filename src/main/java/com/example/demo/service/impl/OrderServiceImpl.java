@@ -13,6 +13,8 @@ import com.example.demo.service.OrderService;
 import com.example.demo.service.ProductService;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Service
@@ -53,6 +55,14 @@ public class OrderServiceImpl implements OrderService {
     public Order getOne(Integer id) {
         if (id==null)return null;
         return orderRepository.getById(id);
+    }
+
+    @Override
+    public Order getOrderWithoutDetails() throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
+        String dateInString = "06-09-2016";
+        Date date = sdf.parse(dateInString);
+        return orderRepository.findAllByOrderDate(date);
     }
 
     @Override

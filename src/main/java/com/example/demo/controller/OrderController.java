@@ -8,6 +8,8 @@ import com.example.demo.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+
 @RestController
 @RequestMapping("/order")
 public class OrderController {
@@ -30,5 +32,12 @@ public class OrderController {
     ) {
         return orderService.getOrder(orderId);
     }
+
+    @GetMapping("/orders_without_details")
+    public Order getOrderWithoutDetails() throws ParseException {
+        return orderService.getOrderWithoutDetails();
+    }
+
+
 
 }

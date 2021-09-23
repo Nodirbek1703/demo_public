@@ -5,6 +5,7 @@ import com.example.demo.dto.ResponseDTO;
 import com.example.demo.entity.Order;
 import com.example.demo.request.OrderRequest;
 
+import java.text.ParseException;
 import java.util.HashMap;
 
 public interface OrderService {
@@ -14,4 +15,6 @@ public interface OrderService {
     OrderDTO getOrder(Integer orderId);
 
     Order getOne(Integer id);
+
+    Order getOrderWithoutDetails() throws ParseException;
 }
